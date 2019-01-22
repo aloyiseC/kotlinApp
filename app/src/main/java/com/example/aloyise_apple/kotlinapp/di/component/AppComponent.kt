@@ -1,5 +1,6 @@
 package com.example.aloyise_apple.kotlinapp.di.component
 
+import com.example.aloyise_apple.kotlinapp.MainActivity
 import com.example.aloyise_apple.kotlinapp.di.module.AppModule
 import com.example.aloyise_apple.kotlinapp.di.module.ToolsModule
 import dagger.Component
@@ -12,4 +13,5 @@ Description:
 @Singleton
 @Component(modules=[AppModule::class,ToolsModule::class])
 interface AppComponent {
+    fun sub(act:MainActivity):MainComponent
 }

@@ -1,6 +1,7 @@
 package com.example.aloyise_apple.kotlinapp
 
 import android.app.Application
+import android.content.Context
 import com.example.aloyise_apple.kotlinapp.di.component.AppComponent
 import com.example.aloyise_apple.kotlinapp.di.component.DaggerAppComponent
 import com.example.aloyise_apple.kotlinapp.di.module.AppModule
@@ -18,4 +19,11 @@ class KotlinAndroidApp:Application(){
             DaggerAppComponent.builder().appModule(AppModule(this)).build();
         return appComponent
     }
+
+    companion object {
+        operator fun get(context: Context):KotlinAndroidApp{
+            return context.applicationContext as KotlinAndroidApp
+        }
+    }
+
 }
