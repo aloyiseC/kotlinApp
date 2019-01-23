@@ -12,13 +12,15 @@ Description:
  */
 class KotlinAndroidApp:Application(){
 
-    private lateinit var appComponent: AppComponent
+    private var appComponent: AppComponent?=null
 
-    fun getAppComponent():AppComponent{
+    fun getAppComponent():AppComponent?{
         if(appComponent == null)
-            DaggerAppComponent.builder().appModule(AppModule(this)).build();
+            appComponent = DaggerAppComponent.builder().appModule(AppModule(this)).build();
         return appComponent
     }
+
+
 
     companion object {
         operator fun get(context: Context):KotlinAndroidApp{

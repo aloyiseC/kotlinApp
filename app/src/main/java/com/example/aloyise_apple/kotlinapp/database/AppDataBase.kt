@@ -9,7 +9,7 @@ import com.example.aloyise_apple.kotlinapp.database.dao.PlayerDao
 Created by Aloyise 2019/1/21
 Description:
  */
-@Database(entities = arrayOf(Player::class),version = 1)
+@Database(entities = arrayOf(Player::class),version = 1,exportSchema = false)
 abstract class AppDataBase :RoomDatabase(){
     abstract fun playerDao():PlayerDao
 }

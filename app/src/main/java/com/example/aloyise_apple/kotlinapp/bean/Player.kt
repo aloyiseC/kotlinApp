@@ -20,4 +20,8 @@ class Player {
     @ColumnInfo(name = "match_num")
     var matchNum:Int = 0
 
+    constructor(name: String?, position: String?) {
+        this.name = name
+        this.position = position
+    }
 }
